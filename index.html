@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="VINCY Store — Wear Your Identity">
+  <title>VINCY — Wear Your Identity</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-mark">V</div>
+    <div class="loader-line"><span></span></div>
+  </div>
+
+  <div class="top-strip">
+    <div>VINCY STORE</div>
+
+    <div class="ticker">
+      <span>Vinci Store - Wear Your Identity</span>
+      <span>Vinci Store - Wear Your Identity</span>
+    </div>
+
+    <div class="server-mini">
+      <i></i> SERVER ONLINE
+    </div>
+  </div>
+
+  <header class="navbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">
+      <span></span>
+      <span></span>
+    </button>
+
+    <a href="#home" class="brand-logo" data-page="home">
+      <span class="brand-v">V</span><span>INCY</span>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#home" data-page="home" class="active">HOME</a>
+      <a href="#products" data-page="products">PRODUCTS</a>
+      <a href="#about" data-page="about">ABOUT</a>
+      <a href="#contact" data-page="contact">CONTACT</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Cari produk">
+        <svg viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4-4"></path>
+        </svg>
+      </button>
+
+      <a class="nav-wa" id="navWa" target="_blank" rel="noopener" aria-label="WhatsApp owner">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 11.5a8.3 8.3 0 0 1-12.5 7.2L4 20l1.3-3.3A8.3 8.3 0 1 1 20 11.5Z"></path>
+          <path d="M8.7 8.5c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c.6 1.1 1.5 1.9 2.6 2.4l.5-.6c.2-.2.4-.3.7-.2l1.6.7c.3.1.4.3.3.6-.2.8-.9 1.4-1.7 1.5-2 .2-4.5-1.1-5.9-2.6-1.2-1.2-2.4-3.3-2.1-4.7.1-.1.2-.2.2-.3Z"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-page="home">HOME</a>
+    <a href="#products" data-page="products">PRODUCTS</a>
+    <a href="#about" data-page="about">ABOUT</a>
+    <a href="#contact" data-page="contact">CONTACT</a>
+  </div>
+
+  <main>
+
+    <!-- ================= HOME ================= -->
+    <section class="page active" id="home">
+
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span></span> NEW BRAND / EST. 2026
+          </div>
+
+          <h1>
+            WEAR YOUR<br>
+            <em>IDENTITY.</em>
+          </h1>
+
+          <p>
+            Minimal apparel and accessories for people
+            who make their own statement.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#products" data-page="products" class="btn btn-dark">
+              EXPLORE PRODUCTS <span>→</span>
+            </a>
+
+            <a href="#about" data-page="about" class="btn btn-light">
+              OUR STORY
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-card">
+            <div class="hero-grid"></div>
+
+            <div class="circle-logo">
+              <span>V</span>
+            </div>
+
+            <div class="hero-word">VINCY</div>
+
+            <div class="hero-year">
+              WEAR YOUR IDENTITY / 2026
+            </div>
+          </div>
+
+          <div class="hero-caption">
+            <span>01</span>
+            <b>IDENTITY SERIES</b>
+            <small>MONO / DAILY / ESSENTIAL</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER / SERVER STATUS -->
+      <div class="status-panel">
+
+        <div class="status-title">
+          <span class="live-dot"></span>
+          <div>
+            <b>USER STATUS</b>
+            <small>LIVE DEVICE SIGNAL</small>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">BATTERY</span>
+          <strong id="batteryValue">--</strong>
+
+          <div class="battery">
+            <div id="batteryFill"></div>
+          </div>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">SIGNAL</span>
+
+          <div class="signal" id="signalBars">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <strong id="signalText">ACTIVE</strong>
+        </div>
+
+        <div class="status-item server-status">
+          <span class="status-label">SERVER</span>
+          <strong id="serverValue">CHECKING</strong>
+          <small id="serverInfo">PTERODACTYL / VPS</small>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">LOCAL TIME</span>
+          <strong id="clockValue">--:--:--</strong>
+        </div>
+
+      </div>
+
+      <!-- RUNNING TEXT -->
+      <div class="marquee-band">
+        <div class="marquee-track">
+          <span>Vinci Store - Wear Your Identity</span><b>•</b>
+          <span>Vinci Store - Wear Your Identity</span><b>•</b>
+          <span>Vinci Store - Wear Your Identity</span><b>•</b>
+          <span>Vinci Store - Wear Your Identity</span><b>•</b>
+        </div>
+      </div>
+
+      <!-- CATEGORIES -->
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">SHOP BY CATEGORY</span>
+          <h2>SELECT YOUR <em>STYLE.</em></h2>
+        </div>
+
+        <a href="#products" data-page="products" class="view-link">
+          VIEW ALL <span>→</span>
+        </a>
+      </div>
+
+      <div class="category-grid">
+
+        <button class="category-card category-shirt" data-category="T-shirt">
+          <div class="category-overlay"></div>
+          <div class="category-number">01</div>
+
+          <div class="category-icon">
+            <svg viewBox="0 0 64 64">
+              <path d="M23 12 9 19l7 12 7-4v25h18V27l7 4 7-12-14-7-4 7h-10l-4-7Z"></path>
+            </svg>
+          </div>
+
+          <div>
+            <b>T-SHIRTS</b>
+            <small>SHOP NOW →</small>
+          </div>
+        </button>
+
+        <button class="category-card category-accessory" data-category="Aksesoris">
+          <div class="category-overlay"></div>
+          <div class="category-number">02</div>
+
+          <div class="category-icon">
+            <svg viewBox="0 0 64 64">
+              <path d="M18 27h28l5 29H13l5-29Z"></path>
+              <path d="M24 27v-5a8 8 0 0 1 16 0v5"></path>
+            </svg>
+          </div>
+
+          <div>
+            <b>ACCESSORIES</b>
+            <small>SHOP NOW →</small>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- BRAND FEATURES -->
+      <div class="feature-row">
+
+        <div>
+          <span>01</span>
+          <b>DESIGNED WITH INTENT</b>
+          <p>
+            Clean silhouettes, neutral tones and details
+            made for everyday wear.
+          </p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <b>DIRECT PURCHASE</b>
+          <p>
+            Choose your product, then talk directly
+            with the owner through WhatsApp.
+          </p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <b>VINCY STANDARD</b>
+          <p>
+            A simple identity system built around
+            confidence, comfort and character.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+    <section class="page" id="products">
+
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">VINCY COLLECTION</span>
+
+          <h1>OUR <em>PRODUCTS.</em></h1>
+
+          <p>
+            Select a category to see the available collection.
+          </p>
+        </div>
+
+        <div class="product-filter">
+          <button class="filter-btn active" data-filter="all">ALL</button>
+          <button class="filter-btn" data-filter="T-shirt">T-SHIRT</button>
+          <button class="filter-btn" data-filter="Aksesoris">ACCESSORIES</button>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <article class="product-card" data-category="T-shirt">
+          <div class="product-image">
+            <img src="/assets/products/tshirt-01.svg" alt="VINCY Identity Tee">
+            <span>01</span>
+          </div>
+
+          <div class="product-info">
+            <div>
+              <h3>VINCY IDENTITY TEE</h3>
+              <p>T-SHIRT / BLACK</p>
+            </div>
+            <strong>Rp 149.000</strong>
+          </div>
+
+          <button class="buy-btn" data-product="VINCY Identity Tee" data-price="Rp 149.000">
+            CHAT OWNER <span>→</span>
+          </button>
+        </article>
+
+        <article class="product-card" data-category="T-shirt">
+          <div class="product-image">
+            <img src="/assets/products/tshirt-02.svg" alt="VINCY Mono Tee">
+            <span>02</span>
+          </div>
+
+          <div class="product-info">
+            <div>
+              <h3>VINCY MONO TEE</h3>
+              <p>T-SHIRT / GREY</p>
+            </div>
+            <strong>Rp 159.000</strong>
+          </div>
+
+          <button class="buy-btn" data-product="VINCY Mono Tee" data-price="Rp 159.000">
+            CHAT OWNER <span>→</span>
+          </button>
+        </article>
+
+        <article class="product-card" data-category="Aksesoris">
+          <div class="product-image">
+            <img src="/assets/products/cap-01.svg" alt="VINCY Signature Cap">
+            <span>03</span>
+          </div>
+
+          <div class="product-info">
+            <div>
+              <h3>VINCY SIGNATURE CAP</h3>
+              <p>ACCESSORY / BLACK</p>
+            </div>
+            <strong>Rp 89.000</strong>
+          </div>
+
+          <button class="buy-btn" data-product="VINCY Signature Cap" data-price="Rp 89.000">
+            CHAT OWNER <span>→</span>
+          </button>
+        </article>
+
+        <article class="product-card" data-category="Aksesoris">
+          <div class="product-image">
+            <img src="/assets/products/bag-01.svg" alt="VINCY Daily Bag">
+            <span>04</span>
+          </div>
+
+          <div class="product-info">
+            <div>
+              <h3>VINCY DAILY BAG</h3>
+              <p>ACCESSORY / BLACK</p>
+            </div>
+            <strong>Rp 119.000</strong>
+          </div>
+
+          <button class="buy-btn" data-product="VINCY Daily Bag" data-price="Rp 119.000">
+            CHAT OWNER <span>→</span>
+          </button>
+        </article>
+
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <b>COLLECTION NOT FOUND</b>
+        <span>Belum ada produk pada kategori ini.</span>
+      </div>
+
+      <div class="order-note">
+        <div class="order-note-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 11.5a8.3 8.3 0 0 1-12.5 7.2L4 20l1.3-3.3A8.3 8.3 0 1 1 20 11.5Z"></path>
+          </svg>
+        </div>
+
+        <div>
+          <b>PEMBAYARAN VIA WHATSAPP</b>
+          <p>
+            Tekan Chat Owner pada produk. Detail stok,
+            ukuran, alamat dan pembayaran akan dilanjutkan
+            langsung bersama owner.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="page" id="about">
+
+      <div class="about-layout">
+
+        <div class="about-title">
+          <span class="eyebrow">ABOUT VINCY</span>
+
+          <h1>
+            MORE THAN<br>
+            A <em>BRAND.</em>
+          </h1>
+
+          <div class="about-mark">V</div>
+        </div>
+
+        <div class="about-content">
+
+          <p class="lead">
+            VINCY lahir dari gagasan sederhana:
+            pakaian bukan hanya sesuatu yang dipakai,
+            tetapi bagian dari cara seseorang
+            menunjukkan identitasnya.
+          </p>
+
+          <p>
+            VINCY dibangun sebagai brand apparel yang membawa
+            pendekatan minimal, clean dan berkarakter.
+            Kami menggabungkan warna netral, bentuk sederhana
+            dan detail yang kuat agar setiap produk mudah
+            dipakai dalam keseharian tanpa kehilangan identitas.
+          </p>
+
+          <div class="story-grid">
+
+            <div>
+              <span>01</span>
+              <h3>THE BEGINNING</h3>
+              <p>
+                Berawal dari ide untuk membuat clothing brand
+                yang terasa modern, sederhana dan tetap
+                memiliki karakter sendiri.
+              </p>
+            </div>
+
+            <div>
+              <span>02</span>
+              <h3>THE IDENTITY</h3>
+              <p>
+                Setiap koleksi VINCY membawa prinsip
+                Wear Your Identity — bebas memakai gaya sendiri.
+              </p>
+            </div>
+
+            <div>
+              <span>03</span>
+              <h3>THE FUTURE</h3>
+              <p>
+                VINCY akan terus berkembang melalui koleksi
+                apparel dan accessories yang relevan.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="quote">
+            “WEAR YOUR IDENTITY.”
+            <small>— VINCY STORE</small>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="page" id="contact">
+
+      <div class="contact-layout">
+
+        <div class="contact-copy">
+          <span class="eyebrow">SOCIAL / CONTACT</span>
+
+          <h1>
+            LET'S TALK<br>
+            <em>WITH VINCY.</em>
+          </h1>
+
+          <p>
+            Untuk order, pertanyaan produk, kerja sama
+            atau informasi lainnya, hubungi channel resmi VINCY.
+          </p>
+
+          <a class="btn btn-dark big-wa" id="contactWa" target="_blank" rel="noopener">
+            CHAT OWNER ON WHATSAPP <span>→</span>
+          </a>
+        </div>
+
+        <div class="social-list">
+
+          <a id="instagramLink" class="social-card" target="_blank" rel="noopener">
+            <span class="social-icon">IG</span>
+            <div>
+              <small>INSTAGRAM</small>
+              <b>@vincystore</b>
+            </div>
+            <span>↗</span>
+          </a>
+
+          <a id="tiktokLink" class="social-card" target="_blank" rel="noopener">
+            <span class="social-icon">TK</span>
+            <div>
+              <small>TIKTOK</small>
+              <b>@vincystore</b>
+            </div>
+            <span>↗</span>
+          </a>
+
+          <a id="emailLink" class="social-card">
+            <span class="social-icon">@</span>
+            <div>
+              <small>EMAIL</small>
+              <b>hello@vincystore.id</b>
+            </div>
+            <span>→</span>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="contact-footer">
+        <div>
+          <b>VINCY STORE</b>
+          <span>WEAR YOUR IDENTITY</span>
+        </div>
+
+        <div>
+          <span>INDONESIA</span>
+          <span>EST. 2026</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SEARCH -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-inner">
+
+      <button class="close-search" id="closeSearch">×</button>
+
+      <span class="eyebrow">SEARCH COLLECTION</span>
+
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Cari T-shirt, cap, bag..."
+        autocomplete="off"
+      >
+
+      <div id="searchResults"></div>
+
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <!-- JavaScript utama -->
+  <script src="/app.js"></script>
+
+</body>
+</html>
